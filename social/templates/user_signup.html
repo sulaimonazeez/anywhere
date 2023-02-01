@@ -1,0 +1,104 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .text-center{
+      color: blue;
+      text-shadow: 10vw;
+    }
+    .btn{
+      color: white;
+      outline: none;
+      background-color: blue;
+      border: none;
+      width: 70vw;
+      padding: 2vw;
+      border-radius: 10vw;
+    }
+      .container-fluid{
+        text-align: center;
+        justify-content: center;
+        margin-top: 20vw;
+      }
+      .form-control{
+        border: none;
+        outline: none;
+        border-bottom: solid 1px white;
+        background-color: black;
+        color: white;
+        width: 68vw;
+      }
+      body{
+        background-color: black;
+      }
+      .forget{
+        position: relative;
+        left: 18vw;
+        top: 3vw;
+      }
+      .signup{
+        
+      }
+      .lock{
+        color: white;
+      }
+      .lock > i{
+        font-size: 15vw;
+        background-color: white;
+        padding: 4vw;
+        border-radius: 50%;
+        width: 20vw;
+        color: blue;
+        margin-bottom: 1vw;
+      }
+      .heading{
+        margin-top: 0;
+      }
+      #secure{
+        color: white;
+        position: relative;
+        left: 50vw;
+        top: -19vw;
+        display: none;
+      }
+      @media all and (min-width: 960px){
+        .form-control{
+          width: 55vw;
+          
+        }
+        .lock > i{
+          width: 10vw;
+          height: 10vw;
+          font-size: 10vw;
+        }
+        .btn{
+          width: 56vw;
+        }
+        .forget{
+          left: 21vw;
+        }
+      }
+    </style>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> Login </title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="lock">
+      <h1 class='heading'>
+        Sign Up
+      </h1></div>
+      <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" class="form-control"/><br><br>
+        <input type="password" name="password" class="form-control"/><br><br>
+        <input class="btn" type="submit" value="login"/><br>
+      </form>
+      <div style="margin-top: 9vw; color: grey">
+         <p>Already have account? <a href="/social/login">login</a></p>
+      </div>
+    </div>
+  </body>
+</html>

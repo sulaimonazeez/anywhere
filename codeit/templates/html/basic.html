@@ -1,0 +1,136 @@
+{% extends "learning.html" %}
+
+{% block title %}
+   html
+{% endblock %}
+<style>
+  
+</style>
+{% block menu %}
+      <ul class="ul">
+     <li><a href="/code/html">HTML basic</a></li>
+     <li><a href="/code/html/attribute">HTML Attribute</a></li>
+     <li><a href="/code/html/element">HTML Element</a></li>
+     <li><a href="/code/html/formatting">HTML Formatting</a></li>
+     <li><a href="/code/html/heading">HTML Heading</a></li>
+     <li><a href="/code/html/paragraph">HTML Paragraph</a></li>
+     <li><a href="/code/html/phrase">HTML Phrase tag</a></li>
+     <li><a href="/code/html/anchor">HTML Anchor</a></li>
+     <li><a href="/code/html/image">HTML Image</a></li>
+     <li><a href="/code/html/list">HTML List</a></li>
+     <li><a href="/code/html/order">HTML Order</a></li>
+     <li><a href="/code/html/unorder">HTML Unorder</a></li>
+     <li><a href="/code/html/list-describtion">HTML Describtion List</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="#">HTML Form input type</a></li>
+     <li><a href="#">HTML Form Attribbute</a></li>
+     <li><a href="#">HTML Class</a></li>
+     <li><a href="#">HTML ID Attribute</a></li>
+     <li><a href="#">HTML Iframe</a></li>
+     <li><a href="#">HTML JavaScript</a></li>
+     <li><a href="#">HTML Comment</a></li>
+     <li><a href="#">HTML File Path</a></li>
+     <li><a href="#">HTML Head</a></li>
+     <li><a href="#">HTML Layout</a></li>
+     <li><a href="#">HTML Layout Technique</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Computer Code</a></li>
+     <li><a href="#">HTML Entitie</a></li>
+     <li><a href="#">HTML Symbol</a></li>
+     <li><a href="#">HTML Charset</a></li>
+     <li><a href="#">HTML URL Encode</a></li>
+     <hr>
+     <h3>Learn New skills</h3>
+     <li><a href="#">Learn Python</a></li>
+     <li><a href="#">Learn js</a></li>
+     <li><a href="#">CSS</a></li>
+   </ul>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+   <div class="mt-5 d-flex justify-content-between">
+     <a class="btn btn-primary" href="" disabled>Previous</a>
+     <a class="btn btn-primary" href="/code/html/attribute">Next</a>
+   </div>
+   </div>
+   <div class="container-fluid">
+     <h1 class="mb-5">HTML Introduction</h1>
+     <h4 class="mt-4">What's HTML5?</h4>
+     <p>HTML stands for Hyper Text MarkUp Language, it's easy and fun to learn. HTML describe the structure of the web page. HTML5 is the fifth and current major version of the html standard</p>
+     <h4 class="mt-4">Why learn HTML5?</h4>
+     <p>it's essential to learn HTML if you want to build web sites, you can't build one if you don't know HTML because it's one of the prerequisite in learning other language used for web developement.</p>
+   </div>
+   <div class="container-fluid">
+     <h1 class="mt-4">Building blocks</h1>
+     <p>An HTML document consist of it's basic building block which are:</p>
+     <ul>
+       <li><h4><strong>Tags:</strong></h4>An HTML tag sorrounds the content and apply meaning to it. it's written between < and > brackets.</li>
+       <li><h4><strong>Attribute:</strong></h4>An attribute in HTML provides extra information about the element, and it is applied within the start tag. An HTML attribute contain two fields: name and value</li>
+     </ul>
+     <h2>Syntax</h2>
+     <textarea disabled="" style="width: 100%; height: auto; color: red; background-color: black" class="fw-bold"><tag name attribute_name="attribute_value"></tag name>
+     </textarea>
+     <ul>
+       <li><h4><strong>Elements:</strong></h4> An HTML element is an individual component of an html file. In an HTML file, everything is written within tags as termed as HTML elements.</li>
+     </ul>
+     <h2>Examples</h2>
+     <textarea id="code" disabled=""><!DOCTYPE html>  
+<html>  
+  <head>  
+    <title>The basic building blocks of HTML</title>  
+ </head>  
+  <body>  
+       <h2>The building blocks</h2>  
+       <p>This is a paragraph tag</p>  
+       <p style="color: red">The style is attribute of paragraph tag</p>  
+       <span>The element contains tag, attribute and content</span>  
+  </body>  
+</html>   </textarea>
+<h2>Output: </h2>
+<div class="container-fluid border rounded" id="output"></div>
+   </div>
+   <div class="mt-5 container-fluid">
+     <h1 class="mb-2">HTML Attribute</h1>
+     <ul>
+       <li>HTML Attribute are special words which provide additional information about the element or attribute are the modifier of the HTML element.</li>
+       <li>Each element or tag can have attribute, which define the behavior of that element.</li>
+       <li>Attribute should always be applied with it's name and value pair.</li>
+       <li>The Attributes name and value are case sensitive, and it's recommend by W3C that it should be written in Lowercase only.</li>
+       <li>You can add multiple attributes in one HTML element, but need to give space between two attributes</li>
+     </ul>
+     <h2 class="mt-4">Example</h2>
+     <textarea disabled="" id="code1"><!DOCTYPE html>  
+<html>  
+<head>  
+</head>  
+<body>  
+    <h1> This is Style attribute</h1>  
+   <p style="height: 50px; color: blue">It will add style property in element</p>  
+    <p style="color: red">It will change the color of content</p>  
+</body>  
+</html></textarea>
+<div id="output1" class="container-fluid border">
+  
+</div>
+   </div>
+   <footer>
+   <div class="container-fluid">
+     <div class="mt-5 d-flex justify-content-between">
+       <a disabled class="rounded btn btn-primary" href="">
+         Previous
+       </a>
+       <a class="rounded btn btn-primary" href="/code/html/attribute">Next</a>
+     </div>
+     </div>
+   </footer>
+   <script>
+     let x = document.getElementById("code").value;
+     document.getElementById("output").innerHTML = x;
+     let code1 = document.getElementById("code1").value;
+     document.getElementById("output1").innerHTML = code1;
+   </script>
+{% endblock %}
+

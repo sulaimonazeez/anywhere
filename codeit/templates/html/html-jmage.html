@@ -1,0 +1,140 @@
+
+{% extends "learning.html" %}
+
+{% block title %} HTML Image {% endblock %}
+
+{% block menu %}
+      <ul class="ul">
+     <li><a href="/code/html">HTML basic</a></li>
+     <li><a href="/code/html/attribute">HTML Attribute</a></li>
+     <li><a href="/code/html/element">HTML Element</a></li>
+     <li><a href="/code/html/formatting">HTML Formatting</a></li>
+     <li><a href="/code/html/heading">HTML Heading</a></li>
+     <li><a href="/code/html/paragraph">HTML Paragraph</a></li>
+     <li><a href="/code/html/phrase">HTML Phrase tag</a></li>
+     <li><a href="/code/html/anchor">HTML Anchor</a></li>
+     <li><a href="/code/html/image">HTML Image</a></li>
+     <li><a href="/code/html/list">HTML List</a></li>
+     <li><a href="/code/html/order">HTML Order</a></li>
+     <li><a href="/code/html/unorder">HTML Unorder</a></li>
+     <li><a href="/code/html/list-describtion">HTML Describtion List</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="#">HTML Form input type</a></li>
+     <li><a href="#">HTML Form Attribbute</a></li>
+     <li><a href="#">HTML Class</a></li>
+     <li><a href="#">HTML ID Attribute</a></li>
+     <li><a href="#">HTML Iframe</a></li>
+     <li><a href="#">HTML JavaScript</a></li>
+     <li><a href="#">HTML Comment</a></li>
+     <li><a href="#">HTML File Path</a></li>
+     <li><a href="#">HTML Head</a></li>
+     <li><a href="#">HTML Layout</a></li>
+     <li><a href="#">HTML Layout Technique</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Computer Code</a></li>
+     <li><a href="#">HTML Entitie</a></li>
+     <li><a href="#">HTML Symbol</a></li>
+     <li><a href="#">HTML Charset</a></li>
+     <li><a href="#">HTML URL Encode</a></li>
+     <hr>
+     <h3>Learn New skills</h3>
+     <li><a href="#">Learn Python</a></li>
+     <li><a href="#">Learn js</a></li>
+     <li><a href="#">CSS</a></li>
+   </ul>
+{% endblock %}
+ 
+{% block content %}
+{% load static %}
+   <div class="container-fluid mt-5">
+     <div class="mt-5 d-flex justify-content-between">
+       <a class="btn p-3 btn-primary" href="/code/html/anchor">Previous</a>
+       <a class="pt-3 btn btn-primary" href="/code/html/list">Next</a>
+     </div>
+     <h1 class="mt-5 mb-5"></h1>
+     <p>
+       <strong>HTML img tag </strong> is used to display image on the web page. HTML img tag is an empty tag that contains attributes only, closing tags are not used in HTML img element.
+     </p>
+     <p> Let's see an example of HTML image</p>
+     <textarea style="height: auto" class="mt-3 mb-2">
+       <h2>HTML Image example</h2>
+       <img src="children.png"/>
+     </textarea>
+     <h2>Output:</h2>
+     <div class="mb-5">
+       <h2>HTML Image example</h2>
+       <img alt="children.png" src="{% static 'AAAABfpnX3dbgjZ-Je8Ax3xn0kXehZm_5L6-xe6YSTq_ucht9TI5jwDMqusWZKNYT8DfGudD0_wWVVTFLiN2_kaQJumz2iivUWbIbAtF.png' %}" class="w-100"/>
+     </div>
+     <h2 class="mb-5 mt-2">Attributes of HTML Img tag</h2>
+     <p>
+       The src and alt are important attributes of HTML image tag. All attributes of HTML image tag are given below.
+     </p>
+     <h4 class="mt-3 mb-3">1) src</h4>
+     <p>
+       It is a necessary attribute that describes the source or path of the image. It instruct the browser where to look for the image on the server.
+     </p>
+     <h4 class="mt-3 mb-3">2) alt</h4>
+     <p><
+       The alt attributes defines an alternate text for the image, if it can't be display. The value of the alt attribute describe the image in words. The alt atttribute is considered good for SEO propective.
+      </p>
+      <h4 class="mt-3 mb-3">3) width</h4>
+      <p>
+        It is an optional atttribute which used to specify the width to display the image. It is not recommended now. You should apply CSS in place of width attribute.
+      </p>
+      <h3 class="mt-3 mb-3">4) height</h3>
+      <p>
+        It h3 the height of the image. The HTML height  attribute also supports iframe, image and object elements. It is not recommended now. You should apply CSS in place of height attribute.
+      </p>
+      <h2 class="mt-5 mb-5">Use of height and width attribute with img tag</h2>
+      <p>
+        You have learnt about how to insert an image in your web page, now if we want to give some height and width to display image according to our requirement, then we can set it width and height attributes of image.
+      </p>
+      <h2 class="mt-5 mb-5">Example</h2>
+      <textarea style="height: auto" disabled="">
+        <img src="toad.png" height="400px" width="400px"/>
+      </textarea>
+      <div>
+        <img class="w-100" src="{% static 'download.jpeg' %}"
+      </div>
+      <div class="bg-dark p-2 text-light">
+       <strong>Note: </strong> Always try to insert the image with width and height, else it may flicker while displaying on webpage.
+      </div>
+     <h2 class="mt-5 mb-5">Use of alt attribute</h2>
+     <p>
+       We can use alt attribute with tag. it will display an alternative text in case of image cannot be displayed on browser. Following is the example for alt attribute.
+     </p>
+     <textarea disabled="" id="code1" style="height: auto">
+ <img src="fake.png" alt="fake.png"/>
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output1" class="rounded border"></div>
+     <h2 class="mt-5 mb-5">How to get image from another directory</h2>
+     <p>
+       To insert an image in your web, that  image must be present in yout same folder where you have put the HTML file. But  if in some case image is available in some other directory then you can access image like this
+     </p>
+     <textarea disabled="" style="height: auto">
+       <img src="E:/images/children.png" alt="children">
+     </textarea>
+     <p class="mt-3">In above statement we have put image in local E--> Images folde--> children.png</p>
+     <div class="mt-4 mb-4 bg-dark text-light">
+       <strong>Note: </strong>if src URL will be incorrect or misspell then it will not display your image on web page, so try to put correct URL. 
+     </div>
+     <h2 class="mt-5 mb-4">Use < img / > tag as link</h2>
+     <p>
+       We can also link an image with other page or we can use an image as a link To do this, put < img > tag inside < a > tag.
+     </p>
+     <textarea disabled="" style="height: auto">
+       <a href="/code"><img src="fake.png"></a>
+     </textarea>
+       <div class="mt-5 d-flex justify-content-between">
+       <a class="btn p-3 btn-primary" href="/code/html/anchor">Previous</a>
+       <a class="pt-3 btn btn-primary" href="/code/html/list">Next</a>
+     </div>
+   </div>
+   <script>
+     let code1 = document.getElementById("codr1").value;
+     document.getElementById("output1").innerHTML = code1;
+   </script>
+{% endblock %}

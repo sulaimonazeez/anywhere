@@ -1,0 +1,256 @@
+{% extends "extend.html" %}
+
+{% block name %} NEW MOVIES{% endblock %}
+{% load static %}
+
+{% block main %}
+<style>
+  .autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  width: 70vw;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 15vw;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+#not-exist{
+  display: none;
+}
+.me{
+ display: none; 
+}
+.shower{
+  display: block;
+}
+@media all and (min-width: 960px){
+  .me{
+    display: block;
+  }
+    .autocomplete-items{
+      left: 70vw;
+      width: 23vw
+    }
+}
+</style>
+       <nav class="mb-0 fixed-top p-3 nav">
+       <div class="d-flex justify-content-between container-fluid">
+        <i onclick="Show()" class="text-light fs-1 fa fa-bars"></i>
+        <h4 id="shadow" class="shadow fw-bold text-success">NAIJABEAT.COM</h4>
+        <form class="text-center d-flex justify-content-between" autocomplete="off" method="post">
+          {% csrf_token %}
+          <input class="rounded" id="search" type="search" name="search" placeholder="Search NAIJABEAT"/>
+          <button id="not-exist" style="background-color: #960012; border: none" type="submit"><i class="fa fa-search fs-1 text-light"></i></button>
+        </form>
+        <i id="mys" class="fs-1 text-light fa fa-search"></i>
+        </div>
+      </nav><br>
+      <div class="autocomplete"></div>
+      <script>
+      function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+              b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+      x[i].parentNode.removeChild(x[i]);
+    }
+  }
+}
+/*execute a function when someone clicks in the document:*/
+document.addEventListener("click", function (e) {
+    closeAllLists(e.target);
+});
+}
+let list = [
+  "Kiss Daniel ODO","Asake - (Ototo)", "India "
+]
+let res = document.getElementById("search")
+autocomplete(res, list)
+      </script>
+      <script>
+    $(document).ready(()=>{
+        $("#mys").click(()=>{
+          $("#search").css({'display':'block'})
+          $("#mys").css({"display":"none"})
+          let add = document.getElementById("shadow")
+          add.classList.add("me");
+          add.classList.remove("shower")
+          $("#not-exist").css({"display":"block"})
+          
+        })
+        $("#search").blur(()=>{
+          setTimeout(()=>{
+            $("#search").css({"display":"none"})
+          $("#not-exist").css({"display":"none"})
+          $("#mys").css({"display":"block"})
+          let me = document.getElementById("shadow");
+          me.classList.add("shower");
+          }, 5000);
+        });
+          
+    })
+      </script>
+{% endblock %}
+ 
+{% block content %}
+<style>
+  .movie-img{
+     height: 35vw;
+     width: 35vw
+  }
+  #temp{
+    background-color: orange;
+    height: 8vw;
+    width: 10vw;
+    position: relative;
+    top: 28vw;
+    padding: 5px;
+    padding-top: 0;
+  }
+  .link{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 4vw;
+  }
+  @media all and (min-width: 960px){
+    .link{
+       margin-top: 14vw;
+       font-size: 20px;
+    }
+    #temp{
+      height: 4vw;
+      width: 6vw;
+      text-align: center;
+      top: 31vw;
+    }
+  }
+</style>
+    <div style="justify-content: space-between" class="mt-3 p-1 d-flex bg-danger container-fluid border rounded">
+      <img class="p-1 rounded movie-img" src="{% static 'download.jpeg'%}"/>
+      <a class="link" href="https://redirector.googlevideo.com/videoplayback?expire=1675230010&ei=2qbZY8rNBJSR1wLJsqn4Dw&ip=207.154.216.138&id=o-AA5UuNGhB3couakawY4Q2m4g7chO0_-mOuY6bbTKXve7&itag=22&source=youtube&requiressl=yes&mh=13&mm=31%2C29&mn=sn-5hne6nsd%2Csn-5hneknek&ms=au%2Crdu&mv=m&mvi=5&pl=21&initcwndbps=221250&spc=H3gIhlLHMWGp-V8vozpJFzKMJ5vQol4&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=4923.419&lmt=1665518452711190&mt=1675207988&fvip=2&fexp=24007246&c=ANDROID&txp=5532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAMXKmOMlBic_P8VnZXholMR3Z_YWWn7mdEtEtey5cNSmAiEAoeGf571DGgWR0DaZwdCAtZnfPko87x7kXLLqA4rXXT0%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAOrmAYLEKF7SHub-Hs7YF8gFSsxmp-Ewt6nefSnKYywpAiBaxwoVxebr-NdmIburLe3tkKUN1JMMcB0rRw2b7IMQBg%3D%3D&host=rr5---sn-5hne6nsd.googlevideo.com&title=yt5s.com-Alani%20Ogidan%20Latest%20Yoruba%20Movie%202022%20Drama%20Starring%20Odunlade%20Adekola%20%7C%20Sanyeri%20%7CLaide%20Bakare%20%7CItele" download="">
+        Alani Ogidan Latest Yoruba Movie 2022 Drama mp4
+      </a>
+      <b id="temp" class='rounded text-light'>new</b>
+    </div>
+        <div style="justify-content: space-between" class="mt-3 p-1 d-flex bg-danger container-fluid border rounded">
+      <img class="p-1 rounded movie-img" src="{% static 'olooto.jpeg'%}"/>
+      <a class="link" href="https://redirector.googlevideo.com/videoplayback?expire=1675256686&ei=Dg_aY7imM8mCgAf-s56gBQ&ip=139.59.128.21&id=o-AGY7WU6VUt2VFNyCzkyCYMeFUOqzP3gE1DSpQlJ3XSxP&itag=22&source=youtube&requiressl=yes&mh=70&mm=31%2C29&mn=sn-4g5ednld%2Csn-4g5lzned&ms=au%2Crdu&mv=m&mvi=1&pl=19&initcwndbps=185000&spc=H3gIhsvqF2NQo2YJa7B1WbZIU8nt9Nk&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=3875.294&lmt=1657479489816760&mt=1675234639&fvip=1&fexp=24007246&c=ANDROID&txp=5532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIhALp6JpbzjmKEroOQjnb5Yu6aROnyqhacTd1D3ybVVMZ4AiBLjXvT_gPIEihmRsgQRCCPlKCnSRKBAmG9lnknJcJ5Aw%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRgIhAPwDR31PuAqRF0fJhB92N6gJWba-b9i-_JmwXhi0XfrQAiEA6smBbWkmG-8rEQqp1Pox0ClKLivIdzSztmapDAnZauM%3D&host=rr1---sn-4g5ednld.googlevideo.com&title=yt5s.com-Motomoto%20-%20Latest%20Yoruba%20Movie%202022%20Premium%20Odunlade%20Adekola%20%7C%20Fathia%20Williams%20%7C%20Olaniyi%20Afonja" download="">
+        Olooto Latest Yoruba Movie 2022 Drama mp4
+      </a>
+      <b id="temp" class='rounded text-light'>new</b>
+    </div>
+        <div style="justify-content: space-between" class="mt-3 p-1 d-flex bg-danger container-fluid border rounded">
+      <img class="p-1 rounded movie-img" src="{% static 'oya.jpeg' %}"/>
+      <a class="link" href="https://redirector.googlevideo.com/videoplayback?expire=1675256859&ei=uw_aY_jBJtX_gAfDrpDwDw&ip=195.201.109.29&id=o-ALLn_tbgX0auNNzzCPDqf4LxadQ7gv0R9rlaX5ufgApK&itag=22&source=youtube&requiressl=yes&mh=dd&mm=31%2C26&mn=sn-5hneknee%2Csn-4g5ednse&ms=au%2Conr&mv=u&mvi=2&pl=27&spc=H3gIhqaDHKRlP-mhvL-xm6_uL7FRPvg&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=3819.937&lmt=1650338443165445&mt=1675235049&fvip=3&fexp=24007246&c=ANDROID&txp=4432434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAPbsEkRgC9O3bmOltzoN6t0_iVCDr10rF7r0ceKruQPQAiEAsFPbNNEOQDgazGaagMw3hhnqHQWgpmV7rxMLOYqe1ng%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl&lsig=AG3C_xAwRQIhAJ-R9kyGPvnO4fZT-5wfotbPNfSTDyAXPINF1sXdR1vfAiA36Z0_vx7zWDhZneltuYVVUn8h_f-bDFUdi7kXd5lSrg%3D%3D&host=rr2---sn-5hneknee.googlevideo.com&title=yt5s.com-Ajoke%20Alagbo%202%20Latest%20Yoruba%20Movie%202022%20Drama%20Starring%20Mercy%20Aigbe%20%7CLateef%20Adedimeji%20%7CRonke%20Odusanya" download="">
+       OYA - Latest Yoruba Movie 2022 Premium Drama mp4
+      </a>
+      <b id="temp" class='rounded text-light'>new</b>
+    </div>
+        <div style="justify-content: space-between" class="mt-3 p-1 d-flex bg-danger container-fluid border rounded">
+      <img class="p-1 rounded movie-img" src="{% static 'leying_ojiji.jpeg'%}"/>
+      <a class="link" href="https://redirector.googlevideo.com/videoplayback?expire=1675256859&ei=uw_aY_jBJtX_gAfDrpDwDw&ip=195.201.109.29&id=o-ALLn_tbgX0auNNzzCPDqf4LxadQ7gv0R9rlaX5ufgApK&itag=22&source=youtube&requiressl=yes&mh=dd&mm=31%2C26&mn=sn-5hneknee%2Csn-4g5ednse&ms=au%2Conr&mv=u&mvi=2&pl=27&spc=H3gIhqaDHKRlP-mhvL-xm6_uL7FRPvg&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=3819.937&lmt=1650338443165445&mt=1675235049&fvip=3&fexp=24007246&c=ANDROID&txp=4432434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAPbsEkRgC9O3bmOltzoN6t0_iVCDr10rF7r0ceKruQPQAiEAsFPbNNEOQDgazGaagMw3hhnqHQWgpmV7rxMLOYqe1ng%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl&lsig=AG3C_xAwRQIhAJ-R9kyGPvnO4fZT-5wfotbPNfSTDyAXPINF1sXdR1vfAiA36Z0_vx7zWDhZneltuYVVUn8h_f-bDFUdi7kXd5lSrg%3D%3D&host=rr2---sn-5hneknee.googlevideo.com&title=yt5s.com-Ajoke%20Alagbo%202%20Latest%20Yoruba%20Movie%202022%20Drama%20Starring%20Mercy%20Aigbe%20%7CLateef%20Adedimeji%20%7CRonke%20Odusanya" download="">
+        Leyin Ojiji 2 Latest Yoruba Movie 2022 Drama mp4
+      </a>
+      <b id="temp" class='rounded text-light'>new</b>
+    </div>
+        <div style="justify-content: space-between" class="mt-3 p-1 d-flex bg-danger container-fluid border rounded">
+      <img class="p-1 rounded movie-img" src="{% static 'download.jpeg'%}"/>
+      <a class="link" href="{% static 'Alani_Ogidan_Latest_Yoruba_Movie_2022_Drama_Starring_Odunlade_Adekola___Sanyeri__Laide_Bakare__Itele(360p).mp4' %}" download="">
+        Alani Ogidan 2 Latest Yoruba Movie 2022 Drama mp4
+      </a>
+      <b id="temp" class='rounded text-light'>new</b>
+    </div>
+{% endblock %}

@@ -1,0 +1,172 @@
+{% extends "learning.html" %}
+
+{% block title %} HTML element {% endblock %}
+
+{% block menu %}
+      <ul class="ul">
+     <li><a href="/code/html">HTML basic</a></li>
+     <li><a href="/code/html/attribute">HTML Attribute</a></li>
+     <li><a href="/code/html/element">HTML Element</a></li>
+     <li><a href="/code/html/formatting">HTML Formatting</a></li>
+     <li><a href="/code/html/heading">HTML Heading</a></li>
+     <li><a href="/code/html/paragraph">HTML Paragraph</a></li>
+     <li><a href="/code/html/phrase">HTML Phrase tag</a></li>
+     <li><a href="/code/html/anchor">HTML Anchor</a></li>
+     <li><a href="/code/html/image">HTML Image</a></li>
+     <li><a href="/code/html/list">HTML List</a></li>
+     <li><a href="/code/html/order">HTML Order</a></li>
+     <li><a href="/code/html/unorder">HTML Unorder</a></li>
+     <li><a href="/code/html/list-describtion">HTML Describtion List</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="#">HTML Form input type</a></li>
+     <li><a href="#">HTML Form Attribbute</a></li>
+     <li><a href="#">HTML Class</a></li>
+     <li><a href="#">HTML ID Attribute</a></li>
+     <li><a href="/c#">HTML Iframe</a></li>
+     <li><a href="#">HTML JavaScript</a></li>
+     <li><a href="#">HTML Comment</a></li>
+     <li><a href="#">HTML File Path</a></li>
+     <li><a href="#">HTML Head</a></li>
+     <li><a href="#">HTML Layout</a></li>
+     <li><a href="#">HTML Layout Technique</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Computer Code</a></li>
+     <li><a href="#">HTML Entitie</a></li>
+     <li><a href="#">HTML Symbol</a></li>
+     <li><a href="#">HTML Charset</a></li>
+     <li><a href="#">HTML URL Encode</a></li>
+     <hr>
+     <h3>Learn New skills</h3>
+     <li><a href="#">Learn Python</a></li>
+     <li><a href="#">Learn js</a></li>
+     <li><a href="#">CSS</a></li>
+   </ul>
+{% endblock %}
+{% block content %}
+   <div class="mt-5 container-fluid">
+       <div class="mt-5 d-flex justify-content-between">
+       <a class="p-3 btn btn-primary" href="/code/html/attribute">Previous</a>
+       <a class="btn btn-primary p-3" href="/code/html/formatting">Next</a>
+     </div>
+     <h1 id="element" class="mb-5">HTML Element</h1>
+     <p class="mt-5">
+       An HTML file is made of elements. These element are responsible for creating web pages and define content in that webpage. An element in HTML usually consist of a start tag < tag name > close < tag name /> and content inserted between them.
+       Technically, an element is a collections of start tag, attribute, end tag, content between them.
+     </p>
+     <div class="rounded container-fluid bg-dark text-light">
+       <strong>Note: </strong>Some elements does not have end tag and content, these element are termed as empty elements or self-closing element or void elements.
+     </div>
+     <h4>such as: </h4>
+     <textarea disabled="" style="height: auto"><p>Hello World!!</p></textarea>
+     <div>
+       <h2 mb-5>Example</h2>
+       <textarea id="code1" disabled="" class="mt-2"><!Doctype html>
+       <html lang="en">
+         <head></head>
+         <body>
+           <h1>This is my first web page</h1>
+           <h2>How it look?</h2>
+           <p>It look nice!!!!</p>
+         </body>
+       </html>
+       </textarea>
+       <h2>Output: </h2>
+       <div id="output1" class="border rounded">
+         
+       </div>
+     </div>
+     <div>
+       <ul>
+         <li>
+           All the written body elements are visible on web page
+         </li>
+       </ul>
+       <p><strong>Void elements: </strong>All the elements in HTML do not require to start tag and end tag such element are known as Void elements or empty elements. These elements are also called as unpaired tag.
+       Some Void element <strong> <br ></strong> (represent a line break), <strong>< hr ></strong> (represent a horizontal line), etc</p>
+       <p><strong>Nested HTML Element: </strong>HTML can be nested, which means an element can comtain another element </p>
+       <hr>
+       
+     </div>
+     <div class="mt-5">
+       <h1 class="mt-3 mb-5">Block-level and inline HTML Element</h1>
+       <p class="mt-2">
+         For the default display and styling purpose in HTML, all the elements are divided into two categories:
+       </p>
+       <ul>
+         <li>Block-level element</li>
+         <li>Inline element</li>
+       </ul>
+     </div>
+     <div class="mt-5 ">
+       <h1 class="mt-3 mb-5">Block-level element:</h1>
+       <ul>
+         <li>These are the elements which structure main part of web page, by dividing a page into coherent blocks.</li>
+         <li>A block-level element always start with new line and takes the full width of web page, from left to right.</li>
+       </ul>
+       <p>Following are the block-level element in HTML </p>
+       <textarea style="height: auto; overflow-x: auto" class="d-flex" disabled="">
+         <address>, <article>, <aside>, <blockquote>, <kbd>, <fieldset>, <dd>, <dl>, <dt>, <div>, <canvas>, <figcaption>, <footer>,<table>
+       </textarea>
+     </div>
+     <div class="mt-4 bg-dark text-light rounded p-2">
+       <strong>Note: </strong>All these element are describe in later chapters.
+     </div>
+     <h2 class="mt-5 mb-2">Example</h2>
+     <textarea id="code2" disabled=""><!Doctype html>
+     <html lang="en">
+       <head>
+       </head>
+       <body>
+         <div style="text-align: center; background-color: blue; color: white">
+           <h2 style="text-align: center">Block level element</h2>
+           <article>example of block level element that take full width of page</article>
+         </div>
+       </body>
+     </html>
+     </textarea>
+     <h2 class="mt-4">Output:</h2>
+     <div id="output2"></div>
+     <p class="mt-3">
+       In the above example we have usedtag, which define a section in a web page, and take full width of page
+     </p>
+     <p>We have used style attribute which is used to styling the HTML content, and the background color are showing that it's a block level element.</p>
+   </div>
+   <div class="mt-5 container-fluid">
+     <h1>Inline elements</h1>
+     <ul>
+       <li>inline element are those elements, which differentiate the part of a given text and provide it a particular function.</li>
+       <li>These elements does not start with new line and take width as per requirement.</li>
+       <li>The line elements are mostly used with other elements.</li>
+     </ul>
+     <textarea style="height: auto" disabled=""><!--<a>, <abbr>, <acronym>, <b>, <bdo>, <big>, <br>, <button>, <cite>, <code>, <dfn>, <em>, <i>, <img>, <input>, <kbd>, <label>, <map>, <object>, <q>, <samp>,<script>, <select>, <small>, <span>, <strong>, <sub>, <sup>, <textarea>, <time>, <tt>, <ar> -->
+     </textarea>
+     <h2 class="mt-5"> Example </h2>
+     <textarea id="code3" disabled=""><!Doctype html>
+     <html lang="en">
+       <head>
+       </head>
+       <body>
+         <a href="https://sulaimon.pythonanywhere.com">click on it</a>
+         <span style="background-color: grey">This is inline</span>
+         <p>This will take the width of text</p>
+       </body>
+     </html>
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output3" class="border rounded"></div>
+     <div class="mt-5 d-flex justify-content-between">
+       <a class="p-3 btn btn-primary" href="/code/html/attribute">Previous</a>
+       <a class="btn btn-primary p-3" href="/code/html/formatting">Next</a>
+     </div>
+   </div>
+   <script>
+     let code1 = document.getElementById("code1").value;
+     document.getElementById("output1").innerHTML = code1;
+       let code2 = document.getElementById("code2").value;
+     document.getElementById("output2").innerHTML = code2;
+     let code3 = document.getElementById("code3").value;
+     document.getElementById("output3").innerHTML = code3;
+   </script>
+{% endblock %}

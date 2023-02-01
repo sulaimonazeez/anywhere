@@ -1,0 +1,70 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+   img{
+     width: 100%;
+   }
+   #button{
+     text-align: center;
+     justify-content: space-evenly;
+   }
+   #pause{
+     display: none;
+   }
+  @media all and (min-width: 960px){
+    marquee{
+     width: 300px 
+    }
+    img{
+      width: 60%
+    }
+  }
+</style>
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+   <audio id="music" src="{{ data.music.url }}"></audio>
+    <div class="mt-5 text-light border bg-danger justify-content-center text-center container-fluid">
+      <div style="height: 50vw" class="text-center">
+        <marquee><h3>{{data.title}}</h3></marquee><br>
+        <img src="{{ data.image.url}}" class="rounded"/>
+        <div id="button" class="mt-2 text-center d-flex">
+          <button id="play-btn" class="text-center btn btn-success"> Play ▶️</button>
+          <button id="pause" class="text-center btn btn-success"> Pause ⏸️ </button>
+          <a class="text-center btn btn-primary" href="{{ data.music.url }}" download> Download </a>
+          
+        </div>
+      </div><br><br><br><br><br><br><br><br><br><br><br>
+      <a href="https://cdn.trendybeatz.com/audio/Zinoleesky-Joromi-[TrendyBeatz.com].mp3" download>Download</a>
+    </div>
+    <script>
+      document.getElementById("play-btn").addEventListener("click", () =>{
+        let x = document.getElementById("music")
+        let res = document.getElementById("play-btn");
+        document.getElementById("play-btn").style.display = "None";
+        document.getElementById("pause").style.display = "block";
+        if (x.play()){
+          x.pause()
+        }
+         x.play()
+      });
+      document.getElementById("pause").addEventListener("click", () =>{
+        let x = document.getElementById("music")
+        document.getElementById("play-btn").style.display = "block";
+        document.getElementById("pause").style.display = "none";
+        if (x.play()){
+          x.pause()
+        }
+         x.pause()
+      })
+    </script>
+    
+  </body>
+</html>

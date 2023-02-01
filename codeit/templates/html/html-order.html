@@ -1,0 +1,175 @@
+{% extends "learning.html" %}
+
+{% block title %} HTML Order List {% endblock %}
+
+{% block menu %}
+      <ul class="ul">
+     <li><a href="/code/html">HTML basic</a></li>
+     <li><a href="/code/html/attribute">HTML Attribute</a></li>
+     <li><a href="/code/html/element">HTML Element</a></li>
+     <li><a href="/code/html/formatting">HTML Formatting</a></li>
+     <li><a href="/code/html/heading">HTML Heading</a></li>
+     <li><a href="/code/html/paragraph">HTML Paragraph</a></li>
+     <li><a href="/code/html/phrase">HTML Phrase tag</a></li>
+     <li><a href="/code/html/anchor">HTML Anchor</a></li>
+     <li><a href="/code/html/image">HTML Image</a></li>
+     <li><a href="/code/html/list">HTML List</a></li>
+     <li><a href="/code/html/order">HTML Order</a></li>
+     <li><a href="/code/html/unorder">HTML Unorder</a></li>
+     <li><a href="/code/html/list-describtion">HTML Describtion List</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="#">HTML Form input type</a></li>
+     <li><a href="#">HTML Form Attribbute</a></li>
+     <li><a href="#">HTML Class</a></li>
+     <li><a href="#">HTML ID Attribute</a></li>
+     <li><a href="#">HTML Iframe</a></li>
+     <li><a href="#">HTML JavaScript</a></li>
+     <li><a href="#">HTML Comment</a></li>
+     <li><a href="#">HTML File Path</a></li>
+     <li><a href="#">HTML Head</a></li>
+     <li><a href="#">HTML Layout</a></li>
+     <li><a href="#">HTML Layout Technique</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Computer Code</a></li>
+     <li><a href="#">HTML Entitie</a></li>
+     <li><a href="#">HTML Symbol</a></li>
+     <li><a href="#">HTML Charset</a></li>
+     <li><a href="#">HTML URL Encode</a></li>
+     <hr>
+     <h3>Learn New skills</h3>
+     <li><a href="#">Learn Python</a></li>
+     <li><a href="#">Learn js</a></li>
+     <li><a href="#">CSS</a></li>
+   </ul>
+{% endblock %}
+
+{% block content %}
+   <div class="mt-5 container-fluid">
+     <div class="mt-5 d-flex justify-content-between">
+       <a class="btn btn-primary p-3" href="/code/html/list">Previous</a>
+       <a class="btn btn-primary p-3" href="/code/html/unorder">Next</a>
+     </div>
+     <h1 class="mt-5">HTML Ordered List | HTML Number List</h1>
+     <p><strong>HTML Ordered List</strong> or Numbered List displays element numbered format. The HTML ol tags is used for ordered list to represent items either in numerical order format or alphabetical order format, or any format where an order is emphasized. There can be different types of numbered list:</p>
+     <ul>
+       <li>Numeric Number (1,2,4)</li>
+       <li>Captial Roman Number ( I II III)</li>
+       <li>Small Roman Number (i ii iii)</li>
+       <li>Small Alphabet (a,b,c)</li>
+       <li>Capital Alphabet (A, B, C)</li>
+       
+     </ul>
+     <h2 class="mt-5 mb-5">HTML Ordered List Example </h2>
+     <p>Let's see the example of HTML ordered list that displays 4 topics in numbered list Here we are not defining type="1" because it is the default type.</p>
+     <textarea class="mt-3 mb-3" id="code1" disabled="">
+ <ol>  
+ <li>HTML</li>  
+ <li>Java</li>  
+ <li>JavaScript</li>  
+ <li>SQL</li>  
+</ol>  
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output1" class="border rounded"></div>
+     <h3 class="mt-4 mb-4">ol type="I"</h3>
+     <p class="mb-3">Let's see the example to display list in roman number uppercase.</p>
+     <textarea id="code2" disabled="">
+<ol type="I">  
+ <li>HTML</li>  
+ <li>Java</li>  
+ <li>JavaScript</li>  
+ <li>SQL</li>  
+</ol>
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output2" class="border rounded "></div>
+        <h3 class="mt-5 mb-4">ol type="i"</h3>
+          <p class="mb-3">Let's see the example to display list in roman number lowercase.</p>
+     <textarea id="code3" disabled="">
+<ol type="i">  
+ <li>HTML</li>  
+ <li>Java</li>  
+ <li>JavaScript</li>  
+ <li>SQL</li>  
+</ol>
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output3" class="border rounded "></div>
+      <h3 class="mt-5 mb-4">ol type="A"</h3>
+          <p class="mb-3">Let's see the example to display list in roman alphabet uppercase.</p>
+     <textarea id="code4" disabled="">
+<ol type="A">  
+ <li>HTML</li>  
+ <li>Java</li>  
+ <li>JavaScript</li>  
+ <li>SQL</li>  
+</ol>
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output4" class="border rounded "></div>
+      <h3 class="mt-5 mb-4">ol type="a"</h3>
+          <p class="mb-3">Let's see the example to display list in roman alphabet lowercase.</p>
+     <textarea id="code4" disabled="">
+<ol type="i">  
+ <li>HTML</li>  
+ <li>Java</li>  
+ <li>JavaScript</li>  
+ <li>SQL</li>  
+</ol>
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output5" class="border rounded "></div>
+     
+     <h2 class="mt-4 mb-4">start attribute</h2>
+     <p>
+       The start attribute is used with ol tag to specify from where to start the list items.
+     </p>
+     <textarea id="code6" disabled="" class="mt-3 mb-3">
+<ol type="i" start="5">  
+ <li>HTML</li>  
+ <li>Java</li>  
+ <li>JavaScript</li>  
+ <li>SQL</li>  
+</ol>  
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output6" class="border rounded"></div>
+     <h2 class="mt-4 mb-3">reversed Attribute</h2>
+     <p>
+       This is a Boolean attribute of HTML ol tag, and it is new in HTML5 version. If you used the reversed attribute with.
+     </p>
+     <textarea id="code7" class="mt-4 mb-3" disabled="">
+<ol type="i" start="5">  
+ <li>HTML</li>  
+ <li>Java</li>  
+ <li>JavaScript</li>  
+ <li>SQL</li>  
+</ol> 
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output7" class="border rounded"></div>
+     
+    <div class="mt-5 d-flex justify-content-between">
+       <a class="btn btn-primary p-3" href="/code/html/list">Previous</a>
+       <a class="btn btn-primary p-3" href="/code/html/unorder">Next</a>
+     </div>
+   </div>
+   <script>
+     let code1 = document.getElementById("code1").value;
+     document.getElementById("output1").innerHTML = code1;
+     let code2 = document.getElementById("code2").value;
+     document.getElementById("output2").innerHTML = code2;
+     let code3 = document.getElementById("code3").value;
+     document.getElementById("output3").innerHTML = code3;
+     let code4 = document.getElementById("code4").value;
+     document.getElementById("output4").innerHTML = code4;
+     let code5 = document.getElementById("code5").value;
+     document.getElementById("output5").innerHTML = code5;
+     let code6 = document.getElementById("code6").value;
+     document.getElementById("output6").innerHTML = code6;
+     let code7 = document.getElementById("code7").value;
+     document.getElementById("output7").innerHTML = code7;
+   </script>
+{% endblock %}

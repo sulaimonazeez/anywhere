@@ -1,0 +1,188 @@
+{% extends "learning.html" %}
+
+{% block title %}
+  HTML Attribute
+{% endblock %}
+{% block menu %}
+{% load static %}
+      <ul class="ul">
+     <li><a href="/code/html">HTML basic</a></li>
+     <li><a href="/code/html/attribute">HTML Attribute</a></li>
+     <li><a href="/code/html/element">HTML Element</a></li>
+     <li><a href="/code/html/formatting">HTML Formatting</a></li>
+     <li><a href="/code/html/heading">HTML Heading</a></li>
+     <li><a href="/code/html/paragraph">HTML Paragraph</a></li>
+     <li><a href="/code/html/phrase">HTML Phrase tag</a></li>
+     <li><a href="/code/html/anchor">HTML Anchor</a></li>
+     <li><a href="/code/html/image">HTML Image</a></li>
+     <li><a href="/code/html/list">HTML List</a></li>
+     <li><a href="/code/html/order">HTML Order</a></li>
+     <li><a href="/code/html/unorder">HTML Unorder</a></li>
+     <li><a href="/code/html/list-describtion">HTML Describtion List</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="#">HTML Form input type</a></li>
+     <li><a href="#">HTML Form Attribbute</a></li>
+     <li><a href="#">HTML Class</a></li>
+     <li><a href="#">HTML ID Attribute</a></li>
+     <li><a href="#">HTML Iframe</a></li>
+     <li><a href="#">HTML JavaScript</a></li>
+     <li><a href="#">HTML Comment</a></li>
+     <li><a href="#">HTML File Path</a></li>
+     <li><a href="#">HTML Head</a></li>
+     <li><a href="#">HTML Layout</a></li>
+     <li><a href="#">HTML Layout Technique</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Computer Code</a></li>
+     <li><a href="#">HTML Entitie</a></li>
+     <li><a href="#">HTML Symbol</a></li>
+     <li><a href="#">HTML Charset</a></li>
+     <li><a href="#">HTML URL Encode</a></li>
+     <hr>
+     <h3>Learn New skills</h3>
+     <li><a href="#">Learn Python</a></li>
+     <li><a href="#">Learn js</a></li>
+     <li><a href="#">CSS</a></li>
+   </ul>
+{% endblock %}
+{% block content %}
+   <div id="html-attr" class="container-fluid">
+       <div class="mt-5 d-flex justify-content-between">
+    <a class="p-3 btn btn-primary" href="/code/html">Previous</a>
+    <a class="p-3 btn btn-primary" href="/code/html/element">Next</a>
+  </div>
+     <h1 class="mt-4 m5-2">HTML Attribute</h1>
+     <ul class="mt-2">
+       <li>
+         HTML attributes are special words which provides additional information about the elements or attributes are the modifier of the HTML elements.
+       </li>
+       <li>Each element or tag can have attributes which define the behavior of that element</li>
+       <li>Attributes should always be aplied with start tag.</li>
+       <li>The Attribute name and values are case sensitive and it's recommend by w3C that it should be written in LowerCase only.</li>
+       <li>You can add multiple attribute in one HTML element, but need to givea space between two attribute.</li>
+     </ul>
+     <h2>Syntax</h2>
+     <textarea disabled="" style="height: auto"><element attribute_name="value"></element>
+     </textarea>
+     <h2 class="mt-3">Example</h2>
+  <textarea disabled="" id="code1"><!DOCTYPE html>  
+<html>  
+<head>  
+</head>  
+<body>  
+    <h1> This is Style attribute</h1>  
+   <p style="height: 50px; color: blue">It will add style property in element</p>  
+    <p style="color: red">It will change the color of content</p>  
+</body>  
+</html></textarea>
+<h2>Output:</h2>
+     <div style="height: auto" id="output1" class="border-success rounded"></div>
+   </div>
+   <div class="container-fluid">
+     <p>
+       In the above statement, we have used paragraph tag in which we have applied style attribute. This is used for applying CSS property on any HTML element. It provides height to paragraph element of 50px and turn it color to blue.
+     </p>
+     <textarea disabled="" style="height: auto"><p style="color: red"></p>
+     </textarea>
+     <p>
+     in the above statement we have again used style attribute in paragraph tag, which turns it's colour red.
+     </p>
+     <div id="system" class="p-2 container-fluid bg-dark text-light border-green rounded">
+       <strong>Note: </strong>There are some commonly used attribute are given below and the complete list and explanation of all attribute are given in HTML attribute List.
+     </div>
+   </div>
+     <div class="container-fluid">
+       <h2>The title attribute in HTML</h2>
+         <p class="mt-4">
+           <strong>Description: </strong>The title attribute is used as text tooltip in most of the browsers. It display its when user move cursor over a link or any text. You can use it with any text or link to show the description about that link or text. In our example, we are taking this with paragraph tag and heading tag
+         </p>
+         <h2 class="mt-3">Example</h2>
+         <h4 class="heading1">with h1 tag: </h4>
+         <div class="container-fluid">
+           <textarea id="code2" style="height: auto" disabled=""><h1 title="this is heading">My Heading</h1>
+           </textarea>
+           <h2>Output: </h2>
+           <div class="rounded border" id="output2"></div>
+         </div>
+         <h4 class="mt-3">with p tag</h4>
+         <div class="container-fluid">
+           <textarea id="code3" disabled="" style="height: auto"><p title="This is paragrah">My Paragrah</p>
+           </textarea>
+           <div class="border rounded" id="output3" ></div>
+         </div>
+
+     </div>
+     <div class="container-fluid">
+       <h3 class="mb-5 mt-3">Code: </h3>
+       <textarea id="code4" disabled=""><!Doctype html>
+       <html lang="en">
+         <head>
+         </head>
+         <body>
+           <h1 title="This is heading">Example of heading</h1>
+           <p title="this is paragraph">Example of paragraph</p>
+         </body>
+       </html>
+       </textarea>
+       <h2>Output:</h2>
+       <div id="output4"></div>
+     </div>
+     <div class="mt-5 container-fluid">
+       <h1 class="mb-5 mt-5">The href attribute in HTML</h1>
+       <p class="mt-4">
+         <strong>Description: </strong>The href attribute is the main attribute of "< a >" anchor tag. This attribute give the link address which is specified in that link. <strong>The href attribute provides the hyperlink, and if it's blank, then it will remain in same page.</strong></p>
+         <h2>Example </h2>
+         <h4 class="mb-4">With link address:</h4>
+         <textarea style="height: auto" disabled="" id="code5"><b>link with href</b><a href="/blog">This a link</a><br><b>link without href</b> <a href="">Another link</a></textarea>
+         <h2>Ouput</h2>
+         <div id="output5" class="border rounded"></div>
+     </div>
+     <div class="container-fluid mt-5">
+       <h1 class="mt-3">The src Attribute</h1>
+       <p class="mt-5">
+         The <strong>src</strong> is one of the important and required attribute of < img /> element. It source for the image which is required to display on browsers. This attribute can contain image in same directory or another directory. The Image name or source should be correct else browser will not display the image.
+       </p>
+       <h2 class="mt-5 mb-5">Example</h2>
+     <textarea style="height: 20vw">
+       <h6>This Image is located at our back end</h6>
+       <img src="inpired.jpg" style="width: 100%; height: 100%"/>
+     </textarea>
+     <h2>Output:</h2>
+     <div>
+       <h6>This Image is located at our back end</h6>
+       <img src="{% static 'IMG-20221112-WA0268.jpg' %}" class="w-100 h-100"/>
+     </div>
+     </div>
+     <div class="mt-5 container-fluid">
+       <h1 class="mt-3 mb-5">Quotes: single quotes or double qoutes</h1>
+       <p class="mt-4">
+         In this chapter you have seen that, we have used attribute with double quotes, but some people might used single quotes in HTML attribute, is also allowed. The following both statement are abdolutely fine.
+       </p>
+       <textarea style="height: 15vw" id="code6">
+         <a target="_blank" href="https://sulaimon.pythonanywhere.com">double quote</a>
+          <br>
+         <a target="_blank" href='https://sulaimon.pythonanywhere.com'>single quote</a>
+       </textarea>
+       <div class="rounded border" id="output6"></div>
+           <div class="mt-5 d-flex justify-content-between">
+       <a class="p-3 btn btn-primary" href="/code/html">Previous</a>
+       <a class="btn btn-primary p-3" href="/code/html/element">Next</a>
+     </div>
+     </div>
+     
+   <script>
+     let cod1 = document.getElementById("code1").value;
+     document.getElementById("output1").innerHTML = cod1;
+     let cod2 = document.getElementById("code2").value;
+     document.getElementById("output2").innerHTML = cod2;
+     let cod3 = document.getElementById("code3").value;
+     document.getElementById("output3").innerHTML = cod3;
+     let cod4 = document.getElementById("code4").value;
+     document.getElementById("output4").innerHTML = cod4;
+     let cod5 = document.getElementById("code5").value;
+     document.getElementById("output5").innerHTML = cod5;
+     let cod6 = document.getElementById("code6").value;
+     document.getElementById("output6").innerHTML = cod6;
+   </script>
+{% endblock %}

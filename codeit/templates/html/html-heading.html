@@ -1,0 +1,113 @@
+{% extends "learning.html" %}
+
+{% block title %} HTML Heading {% endblock %}
+
+{% block menu %}
+          <ul class="ul">
+     <li><a href="/code/html">HTML basic</a></li>
+     <li><a href="/code/html/attribute">HTML Attribute</a></li>
+     <li><a href="/code/html/element">HTML Element</a></li>
+     <li><a href="/code/html/formatting">HTML Formatting</a></li>
+     <li><a href="/code/html/heading">HTML Heading</a></li>
+     <li><a href="/code/html/paragraph">HTML Paragraph</a></li>
+     <li><a href="/code/html/phrase">HTML Phrase tag</a></li>
+     <li><a href="/code/html/anchor">HTML Anchor</a></li>
+     <li><a href="/code/html/image">HTML Image</a></li>
+     <li><a href="/code/html/list">HTML List</a></li>
+     <li><a href="/code/html/order">HTML Order</a></li>
+     <li><a href="/code/html/unorder">HTML Unorder</a></li>
+     <li><a href="/code/html/list-describtion">HTML Describtion List</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="#">HTML Form input type</a></li>
+     <li><a href="#">HTML Form Attribbute</a></li>
+     <li><a href="#">HTML Class</a></li>
+     <li><a href="#">HTML ID Attribute</a></li>
+     <li><a href="#">HTML Iframe</a></li>
+     <li><a href="#">HTML JavaScript</a></li>
+     <li><a href="#">HTML Comment</a></li>
+     <li><a href="#">HTML File Path</a></li>
+     <li><a href="#">HTML Head</a></li>
+     <li><a href="#">HTML Layout</a></li>
+     <li><a href="#">HTML Layout Technique</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Computer Code</a></li>
+     <li><a href="#">HTML Entitie</a></li>
+     <li><a href="#">HTML Symbol</a></li>
+     <li><a href="#">HTML Charset</a></li>
+     <li><a href="#">HTML URL Encode</a></li>
+     <hr>
+     <h3>Learn New skills</h3>
+     <li><a href="#">Learn Python</a></li>
+     <li><a href="#">Learn js</a></li>
+     <li><a href="#">CSS</a></li>
+   </ul>
+{% endblock %}
+
+{% block content %}
+   <div style="margin-top: 20vw" class="container-fluid">
+     <div class="mt-5 d-flex justify-content-between">
+       <a class="btn btn-primary" href="/code/html/formatting">Previous</a>
+       <a class="btn btn-primary" href="/code/html/paragraph">Next</a>
+     </div>
+     <h1 class="mt-5 mb-5">HTML Heading</h1>
+     <p>A HTML heading or HTML h tag can be define as a title or a subtitle which you want to display on the webpage. When you place the text within the heading tag < h 1 > ... </ h1 >, it is displayed on the browser in the bold format and size of the text depend on the number of heading.</p>
+     <p>There are six different HTML heading which are define with the < h1 > to < h6 > tags from highest level h1 (main heading) to the least level h6 (least important heading).</p>
+     <p>
+       h1 is the largest heading tag and h6 is the smallest one. So h1 is used for most important heading and h6 is used for least important.
+     </p>
+     <h5>Heading in HTML helps the search engine to understand and index the structure of web page.</h5>
+     <div class="mt-5 bg-dark text-light p-2">
+       <strong>Note: </strong> The main keyword of the whole of a webpage should be display by h1 tag
+     </div>
+     <p class="mt-3">See this example</p>
+     <textarea disabled="" id="code1"><h1>Heading 1</h1>
+     <h2>Heading 2</h2>
+     <h3>Heading 3</h3>
+     <h4>Heading 4</h4>
+     <h5>Heading 5</h5>
+     <h6>Heading 6</h6>
+     </textarea>
+     <h2>Output</h2>
+     <div id="output1" class="border rounded"></div>
+     <h5>Heading elements (h1...h6) should be used for heading only. They should not be used just to make text bold or big.</h5>
+     <strong>
+       <ul>
+         <li>HTML headings can also be used with nested elements. Following are different code to display the way to use heading elements.</li>
+       </ul>
+     </strong>
+     <h3>Examples</h3>
+     <textarea id="code2" class="mt-5" disabled="">
+       <!DOCTYPE html>  
+<html>  
+ <head>  
+    <title>Heading elements</title>  
+ </head>  
+ <body>  
+     <h1>This is main heading of page. </h1>  
+      <p>h1 is the most important heading, which is used to display the keyword of page </p>  
+     <h2>This is first sub-heading</h2>  
+      <p>h2 describes the first sub heading of page. </p>  
+     <h3>This is Second sub-heading</h3>  
+      <p>h3 describes the second sub heading of page.</p>  
+      <p>We can use h1 to h6 tag to use the different sub-heading with their paragraphs if         
+                     required.   
+                </p>  
+   </body>  
+</html>
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output2" class="border rounded"></div>
+       <div class="mt-5 d-flex justify-content-between">
+       <a class="btn btn-primary" href="/code/html/formatting">Previous</a>
+       <a class="btn btn-primary" href="/code/html/paragraph">Next</a>
+     </div>
+   </div>
+   <script>
+     let code1 = document.getElementById("code1").value;
+     document.getElementById("output1").innerHTML = code1;
+     let code2 = document.getElementById("code2").value;
+     document.getElementById("output2").innerHTML = code2;
+   </script>
+{% endblock %}

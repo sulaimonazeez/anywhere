@@ -1,0 +1,170 @@
+{% extends "learning.html" %}
+
+{% block title %} HTML List {% endblock %}
+
+{% block menu %}
+      <ul class="ul">
+     <li><a href="/code/html">HTML basic</a></li>
+     <li><a href="/code/html/attribute">HTML Attribute</a></li>
+     <li><a href="/code/html/element">HTML Element</a></li>
+     <li><a href="/code/html/formatting">HTML Formatting</a></li>
+     <li><a href="/code/html/heading">HTML Heading</a></li>
+     <li><a href="/code/html/paragraph">HTML Paragraph</a></li>
+     <li><a href="/code/html/phrase">HTML Phrase tag</a></li>
+     <li><a href="/code/html/anchor">HTML Anchor</a></li>
+     <li><a href="/code/html/image">HTML Image</a></li>
+     <li><a href="/code/html/list">HTML List</a></li>
+     <li><a href="/code/html/order">HTML Order</a></li>
+     <li><a href="/code/html/unorder">HTML Unorder</a></li>
+     <li><a href="/code/html/list-describtion">HTML Describtion List</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="#">HTML Form input type</a></li>
+     <li><a href="#">HTML Form Attribbute</a></li>
+     <li><a href="#">HTML Class</a></li>
+     <li><a href="#">HTML ID Attribute</a></li>
+     <li><a href="#">HTML Iframe</a></li>
+     <li><a href="#">HTML JavaScript</a></li>
+     <li><a href="#">HTML Comment</a></li>
+     <li><a href="#">HTML File Path</a></li>
+     <li><a href="#">HTML Head</a></li>
+     <li><a href="#">HTML Layout</a></li>
+     <li><a href="#">HTML Layout Technique</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Computer Code</a></li>
+     <li><a href="#">HTML Entitie</a></li>
+     <li><a href="#">HTML Symbol</a></li>
+     <li><a href="#">HTML Charset</a></li>
+     <li><a href="#">HTML URL Encode</a></li>
+     <hr>
+     <h3>Learn New skills</h3>
+     <li><a href="#">Learn Python</a></li>
+     <li><a href="#">Learn js</a></li>
+     <li><a href="#">CSS</a></li>
+   </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="mt-5 container-fluid">
+    
+    <h1 class="mt-5 mb-5">HTML List</h1>
+    <p>
+      HTML Lists are used to specify lists of information. All lists may contain one or more list elements. There  are three different types of HTML Lists.
+    </p>
+    <ol>
+      <li> Ordered list or number list (ol)</li>
+      <li>Unorder list or bullet list (ul)</li>
+      <li>Description List or Definition list (dl)</li>
+    </ol>
+    <div class="bg-dark text-light mt-4 p-2"><strong>Note: </strong> We can create a list inside another list which will be termed as nested. </div>
+    <h2 class="mt-5 mb-5">HTML Ordered List or Number List</h2>
+    <p>
+      In the ordered HTML lists all the list items are marked with numbers by default. It is known as numbered list also. The ordered list starts with < ol > tag and the list items < li > tag.
+    </p>
+    <textarea class="mt-3" id="code1" disabled="">
+ <ol>  
+   <li>Aries</li>  
+   <li>Bingo</li>  
+   <li>Leo</li>  
+   <li>Oracle</li>  
+</ol>  
+    </textarea>
+    <h2>Output:</h2>
+    <div id="output1" class="rounded border"></div>
+    <h2 class="mt-4 mb-4">HTML Unordered List or Bulleted list</h2>
+    <p>
+      In HTML Unordered list, all the list items are marked with bullet. It is also known as bulleted list also. The Unordered list start with < ul > tag and list items start with the < li > tag.
+    </p>
+    <textarea id="code2" disabled="" class="mt-5 mb-3">
+<ul>  
+ <li>Aries</li>  
+ <li>Bingo</li>  
+ <li>Leo</li>  
+ <li>Oracle</li>  
+</ul>     
+    </textarea>
+    <h2>Output:</h2>
+    <div class="rounded border" id="output2"></div>
+    <h2 class="mt-4 mb-4">HTML Description List or Definition List</h2>
+    <p>
+      HTML Description list is also a list which is supported by HTML and XHTML. It is also known as definition list where entries are listed like a dictionary or encyclopedia.
+    </p>
+   <p>The definition list is very appropriate when you want to present glossary, list of terms or other name-value list.</p> 
+   <p>
+     The HTML definition contains following three tags
+   </p>
+   <textarea class="mt-4 mb-4" id="code3" disabled="">
+<dl>  
+  <dt>Aries</dt>  
+  <dd>-One of the 12 horoscope sign.</dd>  
+  <dt>Bingo</dt>  
+  <dd>-One of my evening snacks</dd>  
+ <dt>Leo</dt>  
+ <dd>-It is also an one of the 12 horoscope sign.</dd>  
+  <dt>Oracle</dt>  
+  <dd>-It is a multinational technology corporation.</dd>   
+</dl>  
+   </textarea>
+   <h2>Output: </h2>
+   <div id="output3" class="rounded border"></div>
+   <h2 class="mt-4 mb-4">HTML Nested List</h2>
+   <p>
+     A list within another list is termed as nested list. If you want a bullet list inside a numbered list then such type of lists will called as neated list.
+   </p>
+   <textarea class="mt-4 mb-3" id="code4" disabled="">
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Nested list</title>  
+</head>  
+<body>  
+    <p>List of Indian States with thier capital</p>  
+<ol>  
+    <li>Delhi  
+        <ul>  
+            <li>NewDelhi</li>  
+        </ul>  
+    </li>  
+    <li>Haryana  
+        <ul>  
+            <li>Chandigarh</li>  
+        </ul>  
+    </li>  
+    <li>Gujarat  
+        <ul>  
+            <li>Gandhinagar</li>  
+        </ul>  
+    </li>  
+    <li>Rajasthan   
+        <ul>  
+            <li>Jaipur</li>  
+        </ul>  
+    </li>  
+    <li>Maharashtra  
+        <ul>  
+            <li>Mumbai</li>  
+        </ul>  
+    </li>  
+    <li>Uttarpradesh  
+        <ul>  
+            <li>Lucknow</li></ul>  
+    </li>  
+</ol>  
+</body>  
+</html> 
+   </textarea>
+   <h2>Output:</h2>
+   <div id="output4" class="border rounded"></div>
+  </div>
+  <script>
+    let code1 = document.getElementById("code1").value;
+    document.getElementById("output1").innerHTML = code1;
+    let code2 = document.getElementById("code2").value;
+    document.getElementById("output2").innerHTML = code2;
+    let code3 = document.getElementById("code3").value;
+    document.getElementById("output3").innerHTML = code3;
+    let code4 = document.getElementById("code4").value;
+    document.getElementById("output4").innerHTML = code4;
+  </script>
+{% endblock  %}

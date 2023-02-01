@@ -1,0 +1,152 @@
+{% extends "learning.html" %}
+
+{% block title %} HTML Unorder {% endblock %}
+
+{% block menu %} 
+         <ul class="ul">
+     <li><a href="/code/html">HTML basic</a></li>
+     <li><a href="/code/html/attribute">HTML Attribute</a></li>
+     <li><a href="/code/html/element">HTML Element</a></li>
+     <li><a href="/code/html/formatting">HTML Formatting</a></li>
+     <li><a href="/code/html/heading">HTML Heading</a></li>
+     <li><a href="/code/html/paragraph">HTML Paragraph</a></li>
+     <li><a href="/code/html/phrase">HTML Phrase tag</a></li>
+     <li><a href="/code/html/anchor">HTML Anchor</a></li>
+     <li><a href="/code/html/image">HTML Image</a></li>
+     <li><a href="/code/html/list">HTML List</a></li>
+     <li><a href="/code/html/order">HTML Order</a></li>
+     <li><a href="/code/html/unorder">HTML Unorder</a></li>
+     <li><a href="/code/html/list-describtion">HTML Describtion List</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="#">HTML Form input type</a></li>
+     <li><a href="#">HTML Form Attribbute</a></li>
+     <li><a href="#">HTML Class</a></li>
+     <li><a href="#">HTML ID Attribute</a></li>
+     <li><a href="#">HTML Iframe</a></li>
+     <li><a href="#">HTML JavaScript</a></li>
+     <li><a href="#">HTML Comment</a></li>
+     <li><a href="#">HTML File Path</a></li>
+     <li><a href="#">HTML Head</a></li>
+     <li><a href="#">HTML Layout</a></li>
+     <li><a href="#">HTML Layout Technique</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Computer Code</a></li>
+     <li><a href="#">HTML Entitie</a></li>
+     <li><a href="#">HTML Symbol</a></li>
+     <li><a href="#">HTML Charset</a></li>
+     <li><a href="#">HTML URL Encode</a></li>
+     <hr>
+     <h3>Learn New skills</h3>
+     <li><a href="#">Learn Python</a></li>
+     <li><a href="#">Learn js</a></li>
+     <li><a href="#">CSS</a></li>
+   </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="mt-5 container-fluid">
+     <div class="mt-5 d-flex justify-content-between">
+       <a class="btn btn-primary p-3" href="/code/html/order">Previous</a>
+       <a class="btn btn-primary p-3" href="/code/html/description">Next</a>
+     </div>
+     <h1 class="mt-5">HTML Unordered List | HTML Bullet List</h1>
+     <p><strong>HTML Unordered List</strong> or Bullet List displays element bullet format. We can use unorder list where we do not need to displays items in any particular order .The HTML ul tags is used for unordered list.</p>
+     <ul>
+       <li>disc</li>
+       <li>Captial Roman Number ( I II III)</li>
+       <li>Circle</li>
+       <li>Square</li>
+       <li>none</li>
+       
+     </ul>
+     <p class="mt-3">
+       To represent different ordered lists there are 4 types of attribute in < ul > tag.
+     </p>
+     <h2 class="mt-5 mb-5">HTML Unordered List Example </h2>
+     <textarea class="mt-3 mb-3" id="code1" disabled="">
+ <ul>  
+ <li>HTML</li>  
+ <li>Java</li>  
+ <li>JavaScript</li>  
+ <li>SQL</li>  
+</ul>  
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output1" class="border rounded"></div>
+     <h3 class="mt-4 mb-4">ul type="circle"</h3>
+     <textarea id="code2" disabled="">
+<ul type="cricle">  
+ <li>HTML</li>  
+ <li>Java</li>  
+ <li>JavaScript</li>  
+ <li>SQL</li>  
+</ul>
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output2" class="border rounded "></div>
+        <h3 class="mt-3 mb-4">ul type="square"</h3>
+     <textarea id="code3" disabled="">
+<ul type="square">  
+ <li>HTML</li>  
+ <li>Java</li>  
+ <li>JavaScript</li>  
+ <li>SQL</li>  
+</ul>
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output3" class="border rounded "></div>
+      <h3 class="mt-5 mb-4">ul type="none"</h3>
+     <textarea id="code4" disabled="">
+<ul type="none">  
+ <li>HTML</li>  
+ <li>Java</li>  
+ <li>JavaScript</li>  
+ <li>SQL</li>  
+</ul>
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output4" class="border rounded "></div>
+     
+     <div class="mt-4 mb-4 bg-dark text-light p-2">
+       <strong>Note: </strong>The type attribute is not supported in HTML5, instead of type you can use CSS property of list-style-type. Following  is the example to show the CSS property for ul tag.
+     </div>
+     <h2>Code:</h2>
+     <textarea class="mt-2 mb-3" disabled="" id="code5">
+<!Doctype html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+     <h2>The type attribute with CSS Property</h2>
+     <ul style="list-style-type: square">
+       <li>HTML</li>
+       <li>Java</li>
+       <li>JavaScript</li>
+       <li>SQL</li>
+     </ul>
+  </body>
+</html>
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output5" class="border rounded"></div>
+     
+         <div class="mt-5 d-flex justify-content-between">
+       <a class="btn btn-primary p-3" href="/code/html/list">Previous</a>
+       <a class="btn btn-primary p-3" href="/code/html/unorder">Next</a>
+     </div>
+  </div>
+  <script>
+    let code1 = document.getElementById("code1").value;
+    document.getElementById("output1").innerHTML = code1;
+    let code2 = document.getElementById("code2").value;
+    document.getElementById("output2").innerHTML = code2;
+    let code3 = document.getElementById("code3").value;
+    document.getElementById("output3").innerHTML = code3;
+    let code4 = document.getElementById("code4").value;
+    document.getElementById("output4").innerHTML = code4;
+    let code5 = document.getElementById("code5").value;
+    document.getElementById("output5").innerHTML = code5;
+  </script>
+{% endblock %}

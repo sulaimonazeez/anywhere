@@ -1,0 +1,254 @@
+{% extends "extend.html" %}
+
+{% block name %} LATEST VIDEO{% endblock %}
+{% load static %}
+
+{% block main %}
+<style>
+  .autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  width: 70vw;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 15vw;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+#not-exist{
+  display: none;
+}
+.me{
+ display: none; 
+}
+.shower{
+  display: block;
+}
+@media all and (min-width: 960px){
+  .me{
+    display: block;
+  }
+    .autocomplete-items{
+      left: 70vw;
+      width: 23vw
+    }
+}
+</style>
+       <nav class="mb-0 fixed-top p-3 nav">
+       <div class="d-flex justify-content-between container-fluid">
+        <i onclick="Show()" class="text-light fs-1 fa fa-bars"></i>
+        <h4 id="shadow" class="shadow fw-bold text-success">NAIJABEAT.COM</h4>
+        <form class="text-center d-flex justify-content-between" autocomplete="off" method="post">
+          {% csrf_token %}
+          <input class="rounded" id="search" type="search" name="search" placeholder="Search NAIJABEAT"/>
+          <button id="not-exist" style="background-color: #960012; border: none" type="submit"><i class="fa fa-search fs-1 text-light"></i></button>
+        </form>
+        <i id="mys" class="fs-1 text-light fa fa-search"></i>
+        </div>
+      </nav><br>
+      <div class="autocomplete"></div>
+      <script>
+      function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+              b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+      x[i].parentNode.removeChild(x[i]);
+    }
+  }
+}
+/*execute a function when someone clicks in the document:*/
+document.addEventListener("click", function (e) {
+    closeAllLists(e.target);
+});
+}
+let list = [
+  "Kiss Daniel ODO","Asake - (Ototo)", "India "
+]
+let res = document.getElementById("search")
+autocomplete(res, list)
+      </script>
+      <script>
+    $(document).ready(()=>{
+        $("#mys").click(()=>{
+          $("#search").css({'display':'block'})
+          $("#mys").css({"display":"none"})
+          let add = document.getElementById("shadow")
+          add.classList.add("me");
+          add.classList.remove("shower")
+          $("#not-exist").css({"display":"block"})
+          
+        })
+        $("#search").blur(()=>{
+          setTimeout(()=>{
+            $("#search").css({"display":"none"})
+          $("#not-exist").css({"display":"none"})
+          $("#mys").css({"display":"block"})
+          let me = document.getElementById("shadow");
+          me.classList.add("shower");
+          }, 5000);
+        });
+          
+    })
+      </script>
+{% endblock %}
+
+{% block content %}
+<style>
+  .movie-img{
+     height: 35vw;
+     width: 80%
+  }
+  #personal{
+    width: 55vw;
+    height: 35vw
+  }
+  #temp{
+    background-color: orange;
+    height: 8vw;
+    width: 10vw;
+    position: relative;
+    top: 28vw;
+    padding: 5px;
+    padding-top: 0;
+  }
+  .link{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 4vw;
+  }
+  @media all and (min-width: 960px){
+    .link{
+       margin-top: 14vw;
+       font-size: 20px;
+    }
+    #temp{
+      height: 4vw;
+      width: 6vw;
+      text-align: center;
+      top: 31vw;
+    }
+      .movie-img{
+     height: 35vw;
+     width: 35%
+  }
+    #personal{
+    width: 35%;
+    height: 35vw
+  }
+  }
+</style>
+    <div style="justify-content: space-between" class="mt-3 p-1 d-flex bg-danger container-fluid border rounded">
+      <img class="p-1 rounded movie-img" src="{% static 'mokey.jpeg'%}"/>
+      <a class="link" href="https://ds1.nkiserv.com/Holly/Monkey.King.Reborn.(NKIRI.COM).2021.1080p.BluRay.DOWNLOADED.FROM.NKIRI.COM.mkv" download="">
+        Download mp4: Monkey King Hero is Back
+      </a>
+      <b id="temp" class='rounded text-light'>new</b>
+    </div>
+        <div style="justify-content: space-between" class="mt-3 p-1 d-flex bg-danger container-fluid border rounded">
+      <img class="p-1 rounded movie-img" src="{% static 'handsome_sibling1.jpeg' %}"/>
+      <a class="link" href="https://ds1.nkiserv.com/Holly/Monkey.King.Reborn.(NKIRI.COM).2021.1080p.BluRay.DOWNLOADED.FROM.NKIRI.COM.mkv" download="">
+        Download mp4: Handsome Sibling episode 1
+      </a>
+      <b id="temp" class='rounded text-light'>new</b>
+    </div>
+        <div style="justify-content: space-between" class="mt-3 p-1 d-flex bg-danger container-fluid border rounded">
+      <img id="personal" class="p-1 rounded " src="{% static 'vegere.jpg' %}"/>
+      <a class="link" href="https://ds1.nkiserv.com/Holly/Monkey.King.Reborn.(NKIRI.COM).2021.1080p.BluRay.DOWNLOADED.FROM.NKIRI.COM.mkv" download="">
+        vengeance of the bride episode 1
+      </a>
+      <b id="temp" class='rounded text-light'>new</b>
+    </div>
+{% endblock %}

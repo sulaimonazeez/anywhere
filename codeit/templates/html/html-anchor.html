@@ -1,0 +1,102 @@
+{% extends "learning.html" %}
+
+{% block title %} HTML Anchor {% endblock %}
+{% block menu %}
+            <ul class="ul">
+     <li><a href="/code/html">HTML basic</a></li>
+     <li><a href="/code/html/attribute">HTML Attribute</a></li>
+     <li><a href="/code/html/element">HTML Element</a></li>
+     <li><a href="/code/html/formatting">HTML Formatting</a></li>
+     <li><a href="/code/html/heading">HTML Heading</a></li>
+     <li><a href="/code/html/paragraph">HTML Paragraph</a></li>
+     <li><a href="/code/html/phrase">HTML Phrase tag</a></li>
+     <li><a href="/code/html/anchor">HTML Anchor</a></li>
+     <li><a href="/code/html/image">HTML Image</a></li>
+     <li><a href="/code/html/list">HTML List</a></li>
+     <li><a href="/code/html/order">HTML Order</a></li>
+     <li><a href="/code/html/unorder">HTML Unorder</a></li>
+     <li><a href="/code/html/list-describtion">HTML Describtion List</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="#">HTML Form input type</a></li>
+     <li><a href="#">HTML Form Attribbute</a></li>
+     <li><a href="#">HTML Class</a></li>
+     <li><a href="#">HTML ID Attribute</a></li>
+     <li><a href="#">HTML Iframe</a></li>
+     <li><a href="#">HTML JavaScript</a></li>
+     <li><a href="#">HTML Comment</a></li>
+     <li><a href="#">HTML File Path</a></li>
+     <li><a href="#">HTML Head</a></li>
+     <li><a href="#">HTML Layout</a></li>
+     <li><a href="#">HTML Layout Technique</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Computer Code</a></li>
+     <li><a href="#">HTML Entitie</a></li>
+     <li><a href="#">HTML Symbol</a></li>
+     <li><a href="#">HTML Charset</a></li>
+     <li><a href="#">HTML URL Encode</a></li>
+     <hr>
+     <h3>Learn New skills</h3>
+     <li><a href="#">Learn Python</a></li>
+     <li><a href="#">Learn js</a></li>
+     <li><a href="#">CSS</a></li>
+   </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="container-fluid mt-5">
+    <div class="mt-5 d-flex justify-content-between">
+      <a href="/code/html/phrase" class="btn btn-primary">Previous</a>
+      <a class="btn btn-primary" href="/code/html/image">Next</a>
+      </div>
+      <h1 class="mb-5 mt-5">HTML Anchor</h1>
+      <p>The <strong>HTML anchor tag</strong> define a hyperlink that links one page to another page. It can create hyperlink to othet web page as well as files, location, ot any Url. The "href" attribute is the most important attribute of the HTML a tag. and which links to destination or URL.</p>
+      <h2 class="mt-5 mb-3">href attribute of HTML anchor tag</h2>
+      <p>
+        The href attribute is used to define the address of the file to be linked in other words, it point out the destination pages.
+      </p>
+      <p>The syntax of HTML anchor tag is given below.</p>
+      <p>< a href="" >link< / a ></p>
+      <p>Let's see an example of HTML anchor tag</p>
+      <textarea id="code1" style="height: auto" class="mt-5 mb-3"><a href="https://sulaimon.pythonanywhere.com">click to see output</a></textarea>
+      <h2>Output:</h2>
+      <div id="output1" class="border rounded"></div>
+      <h2 class="mt-4 mb-4">Specify a location for link using target attribute</h2>
+      <p>
+        if we want to open that link to another page then we can use target attribute of < a > tag. With the help of this link will be open in next page
+      </p>
+      <h2 class="mt-5 mb-2">Example</h2>
+      <textarea class="mt-2 mb-4 " id="code2" disabled="">
+        <!Doctype html>
+        <html lang="en">
+          <head></head>
+          <body>
+            <p>click on a <a href="/">link</a></p>
+          </body>
+        </html>
+      </textarea>
+      <h2>Output:</h2>
+      <div id="output2" class="rounded border"></div>
+      <div class="p-2 mt-4 bg-dark text-light">
+        <strong>Note: </strong>The target attribute can only use with href in anchor tag. If we will not use target then link will open in same page
+      </div>
+      <h2 class="mt-5 mb-5">Appearance of HTML anchor tag</h2>
+      <p>
+        An <strong>Unvisited link</strong> is displayed underline and blue.
+      </p>
+      <p>
+        A <strong>visisted link </strong> displayed underline and purple.</p>
+      <p>An <strong>Active link</strong> is underline and red.</p>
+         <div class="mt-5 d-flex justify-content-between">
+      <a href="/code/html/phrase" class="btn btn-primary">Previous</a>
+      <a class="btn btn-primary" href="/code/html/image">Next</a>
+      </div>
+  </div>
+  <script>
+    let code1 = document.getElementById("code1").value;
+    document.getElementById("output1").innerHTML = code1;
+    let code2 = document.getElementById("code2").value;
+    document.getElementById("output2").innerHTML = code2;
+  </script>
+{% endblock %}

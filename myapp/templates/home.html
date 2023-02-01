@@ -1,0 +1,236 @@
+<!Doctype html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>my portfolio</title>
+    <style>
+      /* my style */
+      body{
+        background-color: black;
+        color: white;
+        
+      }
+      #orange{
+        color: orange;
+      }
+      .img{
+         border-radius: 50%;
+         border: solid 2px red;
+         width: 40vw;
+         height: 40vw;
+         
+       }
+       #mypro{
+         margin-top: 10vw;
+       }
+       .content{
+         display: flex;
+         justify-content: space-between;
+       }
+       .margin{
+         margin-top: 20vw;
+       }
+      hr{
+        width: 30vw;
+        position: relative;
+        border-width: 2px;
+        left: 33vw;
+        
+      }
+      .btn{
+        background-color: orange;
+        
+      }
+      .btn:hover{
+        border: solid 2px white;
+        background-color: black;
+        color: white;
+      }
+      #content{
+        font-size: 16px;
+      }
+      .mt{
+        margin-top: 20vw;
+      }
+      .emoji{
+        font-size: 8vw
+      }
+      #web{
+        font-size: 17px;
+      }
+      .box{
+        position: relative;
+        transition: 1s;
+        transform: translateY(150px);
+        opacity: 0;
+      }
+      .show{
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .bot{
+        position: relative;
+        transform: translateX(100px);
+        transition: 1s;
+        opacity: 0;
+      }
+      .bot .show{
+        transform: translateX(0);
+        opacity: 1;
+      }
+      .mouse:hover{
+        background-color: #1d0002;
+        border: solid 2px white;
+        border-radius: 10%;
+      }
+      @media all and (min-width:960px){
+        .img{
+           width: 45vw;
+          height: 40vw;
+          
+        }
+        .private{
+          margin-right: 3vw;
+        }
+        .head{
+          margin-top: 15vw;
+          margin-left: 3vw;
+        }
+        .move{
+          transform: translateX(0);
+          opacity: 1;
+          
+        }
+        
+        
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="mt-5 justify-content-center container-fluid">
+      <div class="d-flex justify-content-between content">
+        <div class="head">
+        <h6 class="mb-1" style="margin-bottom: -4vw">Hi, there my name is</h6>
+        <h2 class="mt-0 mb-0 display-4 fw-bold" style="">Sulaimon Azeez</h2>
+        <p style="" class="">I am <span style="font-weight: bold" id="orange">Full-stack developer</span></p>
+      </div>
+      <img id="word" class="private justify-content-center img" src="{% static 'FB_IMG_16708817024426504.jpg' %}"/>
+      </div>
+      <div class="row margin">
+        <div class="text-center">
+           <h2 id="line" class="mb-1 text-center">About <span id="orange" >Me</span></h2>
+        <hr class="mt-0"/>
+        </div>
+      <div class="col-xs-12 col-lg-6 col-sm-6">
+        <div class="mt-2">
+          <p id="content">
+            my name is <span id="orange"><strong>Sulaimon Azeez</strong></span> i am full stack developer and a blogger with a highly qualified and self-attained skill set which contain most used and compatible Python framework - Django.
+          </p>
+          <div class="d-flex justify-content-between">
+            <a class="btn rounded-pill" href="{% static 'myportfolio-sulaimon-azeez.pdf' %}" download>Download CV</a>
+            <a class="btn rounded-pill" href="/chat">Let's chat</a>
+          </div>
+        </div>
+      </div>
+      <div class="move box col-xs-12 col-sm-6 col-lg-6">
+        <h5>HTML</h5>
+        <div class='progress'>
+          <span style="background-color: orange; width: 85vw; color: white" class="progress-bar">85%</span>
+        </div>
+        <h5>CSS</h5>
+                <div class='progress'>
+          <span style="background-color: orange; width: 70vw; color: white" class="progress-bar">70%</span>
+        </div>
+        <h5>Python - Django</h5>
+                <div class='progress'>
+          <span style="background-color: orange; width: 80vw; color: white" class="progress-bar progress-bar-striped">80%</span>
+        </div>
+        <h5>Javascript</h5>
+                <div class='progress'>
+          <span style="background-color: orange; width: 60vw; color: white" class="progress-bar">60%</span>
+        </div>
+          <h5>Boostrap</h5>
+                <div class='progress'>
+          <span style="background-color: orange; width: 70vw; color: white" class="progress-bar">70%</span>
+        </div>
+      </div>
+      </div>
+      <div class="row mt-5">
+        <div class="mt-5 ">
+        <h2 class="mt-5 text-center"><span id="orange">My</span> Service</h2>
+        <hr class='mt-0'/>
+        </div>
+        <div class="mouse move box text-center col-xs-12 col-sm-4 col-lg-4">
+          <span class="mb-0 emoji"><i class="fa fa-mobile"></i></span>
+          <h3 style='' id="orange" class="mt-0">Response Website Development</h3>
+          <p id="web" class="text-center">website has an important role in your coustomer satisfaction as it has all the vital info about the product and the can have one-to-one chat with you</p>
+        </div>
+           <div class="mouse move box text-center col-xs-12 col-sm-4 col-lg-4">
+          <span class="mb-0 emoji"><i class="fa fa-code"></i></span>
+          <h3 id="orange" class="mt-0">Api Development</h3>
+          <p id="web">Django rest api play a vital role in web application. Create fast and secure api with Powerful serialization engine that compatible with both ORM and non-ORM data sources.</p>
+        </div>
+
+  <div class="mouse move box text-center col-xs-12 col-sm-4 col-lg-4">
+          <span class="mb-0 emoji"><i class="fa fa-send"></i></span>
+          <h3 style='' id="orange" class="mt-0">Landing Page Development</h3>
+                    <p id="web">
+            Landing Page is the first ever page that the whole will see online. it will play a vital role in spreading the whole world about your produce.
+          </p>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="mt-5">
+          <h2 id="mypro" class="text-center mb-1"><span id="orange">My</span>Project</h2>
+          <hr class="mt-0"/>
+        </div>
+        <div style="overflow-x: auto" class="justify-content-between d-flex">
+            <div class="p-2 rounded border" style="height: 70vw; margin-right: 2vw">
+            <img style="height: 70%; width: 80vw" class="rounded" src="{% static 'Screenshot_20230131-121849_1675163971766_1675165414320.png' %}" class="">
+            <div>
+              <h5 class="fs-1">Download Latest Song NaijaBeat</h5>
+              <a class="text-primary rounded-pill btn btn-secondary" href="/blog">Visit Site</a>
+            </div>
+            </div>
+             <div class="p-2 rounded border" style="height: 70vw; margin-right: 2vw">
+            <img style="height: 70%; width: 80vw" class="rounded" src="{% static 'Screenshot_20230121-162030_1675167679848.png' %}" class="">
+            <div>
+              <h5 class="fs-1">Learn how to with codeFun</h5>
+              <a class="text-primary rounded-pill btn btn-primary" href="/code">Visit Site</a>
+            </div>
+            </div>
+            
+          </div>
+    </div>
+    <footer class="text-center mt-5">
+      <i class="text-center">@copyright sulaimon</i>
+    </footer>
+    <script>
+    let boxes = document.querySelectorAll(".box");
+    let bot = document.querySelectorAll('.bot');
+    console.log(boxes)
+    window.addEventListener('scroll', ()=>{
+      let triggerBottom = window.innerHeight / 5 * 5
+      boxes.forEach(box =>{
+        const boxTop = box.getBoundingClientRect().top;
+        if (boxTop < triggerBottom){
+          box.classList.add("show");
+        }else{
+          box.classList.remove("show");
+        }
+      });
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+{% extends "learning.html" %}
+
+{% block title %} HTML Paragraph {% endblock %}
+
+{% block menu %}
+      <ul class="ul">
+     <li><a href="/code/html">HTML basic</a></li>
+     <li><a href="/code/html/attribute">HTML Attribute</a></li>
+     <li><a href="/code/html/element">HTML Element</a></li>
+     <li><a href="/code/html/formatting">HTML Formatting</a></li>
+     <li><a href="/code/html/heading">HTML Heading</a></li>
+     <li><a href="/code/html/paragraph">HTML Paragraph</a></li>
+     <li><a href="/code/html/phrase">HTML Phrase tag</a></li>
+     <li><a href="/code/html/anchor">HTML Anchor</a></li>
+     <li><a href="/code/html/image">HTML Image</a></li>
+     <li><a href="/code/html/list">HTML List</a></li>
+     <li><a href="/code/html/order">HTML Order</a></li>
+     <li><a href="/code/html/unorder">HTML Unorder</a></li>
+     <li><a href="/code/html/list-describtion">HTML Describtion List</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="/code/html/form">HTML form</a></li>
+     <li><a href="#">HTML Form input type</a></li>
+     <li><a href="#">HTML Form Attribbute</a></li>
+     <li><a href="#">HTML Class</a></li>
+     <li><a href="#">HTML ID Attribute</a></li>
+     <li><a href="#">HTML Iframe</a></li>
+     <li><a href="#">HTML JavaScript</a></li>
+     <li><a href="#">HTML Comment</a></li>
+     <li><a href="#">HTML File Path</a></li>
+     <li><a href="#">HTML Head</a></li>
+     <li><a href="#">HTML Layout</a></li>
+     <li><a href="#">HTML Layout Technique</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Response</a></li>
+     <li><a href="#">HTML Computer Code</a></li>
+     <li><a href="#">HTML Entitie</a></li>
+     <li><a href="#">HTML Symbol</a></li>
+     <li><a href="#">HTML Charset</a></li>
+     <li><a href="#">HTML URL Encode</a></li>
+     <hr>
+     <h3>Learn New skills</h3>
+     <li><a href="#">Learn Python</a></li>
+     <li><a href="#">Learn js</a></li>
+     <li><a href="#">CSS</a></li>
+   </ul>
+{% endblock %}
+
+{% block content %}
+   <div id="paragraph" class="container-fluid">
+     <div class="mt-5 d-flex justify-content-between">
+       <a class="p-3 btn btn-primary" href="/code/html/heading">Previus</a>
+       <a class="p-3 btn btn-primary" href="/code/html/phrase">Next</a>
+     </div>
+     <h1 class="mt-5 mb-5">HTML Paragraph</h1>
+     <p class="mt-3">
+       HTML paragraph or HTML p tags used to define a paragraph in webpage. Let's take a simple example to see how it work. It is a notable point that a browser itself add an empty line before and after a paragraph. An HTML < p > tag indicates starting of new paragraph.
+     </p>
+     <div class="mt-4 bg-dark text-light p-2"><strong>Note: </strong>If we are using varous < p > tags in one HTML file then browser automatically adds a single blank line between the two paragraph.
+     </div>
+     <p class="mt-4">See this example</p>
+     <textarea id="code1" class="mt-4 " disabled="">
+       <p>This is the first paragrah</p>
+       <p>This is the first paragrah</p>
+       <p>This is the first paragrah</p>
+     </textarea>
+     <h2>Output: </h2>
+     <div id="output1" class="border rounded"></div>
+     <h2 class="mt-4 mb-5">Space inside HTML Paragraph</h2>
+     <p>
+       if you put alot of spaces inside HTML p tag, browser remove extra space and extra line while displaying the page. The browser count number of spaces lines as a single one.
+     </p>
+     <textarea id="code2" class="mt-4" disabled="">
+       <p>
+         i am
+         going to provide
+         you a tutorial on HTML
+         and hope that it will
+         be very beneficial for you
+       </p>
+     </textarea>
+     <h2>Output: </h2>
+     <div id="output2" class="border rounded"></div>
+     <p class="mt-4">
+       Look, i put here a lot of space but i know, But i know broswer will ignore it.
+     </p>
+     <p>You cannot determine the display of HTML</p>
+     <p>because resized the windows may create different result.</p>
+     <p>
+       As you can see all the extra line and unnecessary spaces are removed by the browser.
+     </p>
+     <h2 class="mt-5 mb-5">How to use < br > and < hr > tag with Paragraph</h2>
+     <p>
+       An HTML < br > tag is used for line break and it can be used with paragraph element. Following is the example to show how to use < br > with < p > element.
+     </p>
+     <h3 class="mb-5 mt-4">Example</h3>
+     <textarea id="code3" disabled="" class="mt-2">
+<!DOCTYPE html>  
+<html>  
+     <head>  
+    </head>  
+  <body>  
+      <h2> Use of line break with pragraph tag</h2>  
+          <p><br>Papa and mama, and baby and Dot,  
+     <br>Willie and me?the whole of the lot  
+               <br>Of us all went over in Bimberlie's sleigh,  
+                 <br>To grandmama's house on Christmas day.  
+          </p>  
+   </body>  
+</html>  
+     </textarea>
+     <h2>Output</h2>
+     <div id="output3" class="border rounded"></div>
+     <p class="mt-5">
+       An HTML tag is used to apply a horizontal line between two statements or two paragraph. Following is the example which is showing use of < hr > tag with paragraph.
+     </p>
+     <h3 class="mb-5 mt-3 ">Example</h3>
+     <textarea class="mt-3" id="code4" disabled="">
+       <!DOCTYPE html>  
+<html>  
+ <head>  
+    </head>  
+ <body>  
+   <h2> Example to show a horizontal line with paragraphs</h2>  
+     <p> An HTML hr tag draw a horizontal line and separate two paragraphs with that line.<hr> it will start a new paragraph.  
+     </p>  
+  </body>  
+</html>  
+     </textarea>
+     <h2>Output:</h2>
+     <div id="output4" class="border rounded"></div>
+      <div class="mt-5 d-flex justify-content-between">
+       <a class="p-3 btn btn-primary" href="/code/html/heading">Previus</a>
+       <a class="p-3 btn btn-primary" href="/code/html/phrase">Next</a>
+     </div>
+   </div>
+   <script>
+     let code1 = document.getElementById("code1").value;
+     document.getElementById("output1").innerHTML = code1
+     let code2 = document.getElementById("code2").value;
+     document.getElementById("output2"). innerHTML = code2
+     let code3 = document.getElementById("code3").value;
+     document.getElementById("output3"). innerHTML = code3
+     let code4 = document.getElementById("code4").value;
+     document.getElementById("output4"). innerHTML = code4
+   </script>
+{% endblock %}
